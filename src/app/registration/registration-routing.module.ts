@@ -9,15 +9,15 @@ const routes: Routes = [
     component: RegistrationPage
   },
   {
-    path: 'registro-chofer',
+    path: 'chofer',
     loadChildren: () => import('./registro-chofer/registro-chofer.module').then( m => m.RegistroChoferPageModule)
   },
   {
-    path: 'registro-usuario',
+    path: 'usuario',
     loadChildren: () => import('./registro-usuario/registro-usuario.module').then( m => m.RegistroUsuarioPageModule)
   },
   {
-    path: 'registro-restaurante',
+    path: 'restaurante',
     loadChildren: () => import('./registro-restaurante/registro-restaurante.module').then( m => m.RegistroRestaurantePageModule)
   }
 ];
