@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { YOPage } from './yo.page';
-
 const routes: Routes = [
   {
-    path: '',
-    component: YOPage
+    path: 'usuario',
+    loadChildren: () => import('./yo-usuario/yo-usuario.module').then( m => m.YoUsuarioPageModule)
+  },
+  {
+    path: 'restaurante',
+    loadChildren: () => import('./yo-restaurante/yo-restaurante.module').then( m => m.YoRestaurantePageModule)
   }
 ];
 

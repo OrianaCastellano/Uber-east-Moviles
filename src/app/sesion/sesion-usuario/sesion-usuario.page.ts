@@ -10,13 +10,84 @@ export class SesionUsuarioPage implements OnInit {
   lista: string[];
 
   producto: any=[{
-    titulo: "PATERNIDAD",
-    restaurante: "Pelicula Clase B",
+    titulo: "Hamburguesa",
+    restaurante: "Siesta key",
     precio: "3$" ,
-    ubicacion: "abc",
-  
+    ubicacion: "Avenida",
+  },{
+    titulo: "Empanadas",
+    restaurante: "Pastelitos",
+    precio: "4$" ,
+    ubicacion: "Avenida",},
+    {
+      titulo: "Hamburguesa",
+      restaurante: "Siesta key",
+      precio: "3$" ,
+      ubicacion: "Avenida",},
+];
 
-  }];
+restaurante: any=[{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},{
+  nombre: "Hamburguesa",
+  restaurante: "Siesta key",
+  descripcion: "3$" ,
+  ubicacion: "Avenida",
+},
+];
   constructor() { 
     
   }
