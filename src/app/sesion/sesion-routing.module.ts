@@ -5,8 +5,12 @@ import { SesionPage } from './sesion.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: SesionPage
+    path: 'usuario',
+    loadChildren: () => import('./sesion-usuario/sesion-usuario.module').then( m => m.SesionUsuarioPageModule)
+  },
+  {
+    path: 'restaurante',
+    loadChildren: () => import('./sesion-restaurante/sesion-restaurante.module').then( m => m.SesionRestaurantePageModule)
   }
 ];
 

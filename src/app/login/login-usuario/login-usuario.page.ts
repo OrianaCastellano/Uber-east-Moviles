@@ -21,7 +21,7 @@ export class LoginUsuarioPage implements OnInit {
     });
   }
   async login() {
-    this.router.navigateByUrl("/sesion", { replaceUrl: true });
+    this.router.navigateByUrl("/sesion/usuario", { replaceUrl: true });
     
     console.log (this.credentials.value)
   } 

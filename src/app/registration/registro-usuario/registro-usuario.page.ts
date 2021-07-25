@@ -24,7 +24,7 @@ export class RegistroUsuarioPage implements OnInit {
   });
 }
 async Register() {
-  this.router.navigateByUrl("/login", { replaceUrl: true });
+  this.router.navigateByUrl("/login/usuario", { replaceUrl: true });
   
   console.log (this.credentials.value)
 } 

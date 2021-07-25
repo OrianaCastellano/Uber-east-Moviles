@@ -21,7 +21,7 @@ export class LoginRestaurantePage implements OnInit {
     });
   }
   async login() {
-    this.router.navigateByUrl("/sesion", { replaceUrl: true });
+    this.router.navigateByUrl("/sesion/restaurante", { replaceUrl: true });
     
     console.log (this.credentials.value)
   } 

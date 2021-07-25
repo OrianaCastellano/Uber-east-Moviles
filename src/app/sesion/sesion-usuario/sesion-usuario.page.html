@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="danger">
+<ion-buttons>
+  <ion-img src="../assets/logo.png"></ion-img>
+  <ion-menu-button slot="end"></ion-menu-button>
+  <ion-label>Menú</ion-label>  <ion-button routerLink="/home">Añadir al Carrito
+    <ion-icon name="happy" color="black" class="icon"></ion-icon>
+  </ion-button>
+</ion-buttons>
+
+</ion-toolbar>
+<ion-searchbar  showCancelButton animated placeholder="Buscar"(ionchange)="buscar($event)"></ion-searchbar>
+</ion-header>
+<ion-content>
+  <ion-slides  [options]="slideOpts">
+    <ion-slide>
+      <img src="../assets/foto11.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+          <img src="../assets/foto22.jpg"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="../assets/foto33.jpg"/>
+    </ion-slide>
+  </ion-slides>
+  
+  <h1 >
+   Menú del Día
+  </h1>
+  <ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let producto of producto"  >
+      <ion-card class="cartaproducto"> 
+        <ion-card-header>
+          <ion-img class="fotoproducto" src="../assets/logo.png"></ion-img>
+          <ion-card-subtitle> {{producto.restaurante}}</ion-card-subtitle>
+          <ion-card-title>{{producto.titulo}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+              PRECIO:{{producto.precio}}  <br>
+              UBICACION: {{producto.ubicacion}}
+        </ion-card-content>
+        <ion-item>
+          <ion-icon name="" slot="start"></ion-icon>
+          <ion-button color="dark" fill="outline" slot="end" >Añadir al carrito</ion-button>
+        </ion-item>
+      </ion-card>
+    
+    </ion-col>
+    
+  </ion-row>
+</ion-grid>
+
+
+</ion-content>

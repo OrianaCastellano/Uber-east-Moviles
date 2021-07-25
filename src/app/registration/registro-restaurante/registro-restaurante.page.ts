@@ -24,10 +24,11 @@ export class RegistroRestaurantePage implements OnInit {
       latitude: ["", [Validators.required]],
       longitude: ["", [Validators.required]],
       foto: ["", [Validators.required]],
+      firstname:["", [Validators.required]],
   });
 }
 async Register() {
-  this.router.navigateByUrl("/login", { replaceUrl: true });
+  this.router.navigateByUrl("/login/restaurante", { replaceUrl: true });
   
   console.log (this.credentials.value)
 } 

@@ -14,7 +14,7 @@
 <ion-content>
  
   <form class="loguearse" (ngSubmit)="login()"[formGroup]="credentials">
-    <ion-img class="usuariofoto" src="../assets/usuario.png"></ion-img>
+    <ion-img class="usuariofoto" src="../assets/usuariocho.png"></ion-img>
     <h1>
 Inicia Sesion
     </h1>
@@ -36,6 +36,11 @@ Inicia Sesion
     <ion-row>
       <ion-col class="contrasena">
         <a  [routerLink]="['/forgot-password']"class="small-text"> Olvidaste tu contraseña? </a>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="resgistrarse">
+        <a  [routerLink]="['/registro/chofer']" class="small-text" > Registrarse </a>
       </ion-col>
     </ion-row>
   </form>
