@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="danger">
+<ion-buttons>
+  <ion-img src="../assets/logo.png"></ion-img>
+  <ion-menu-button slot="end"></ion-menu-button>
+  <ion-label>Menú</ion-label>  <ion-button routerLink="/home">Añadir al Carrito
+    <ion-icon name="happy" color="black" class="icon"></ion-icon>
+  </ion-button>
+</ion-buttons>
+
+</ion-toolbar>
+<ion-searchbar  showCancelButton animated placeholder="Buscar"(ionchange)="buscar($event)"></ion-searchbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-slides  [options]="slideOpts">
+    <ion-slide>
+      <img src="../assets/foto11.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+          <img src="../assets/foto22.jpg"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="../assets/foto33.jpg"/>
+    </ion-slide>
+  </ion-slides>
+  
+  <h1 >
+   Menú del Día
+  </h1>
+  <ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let pelicula of peliculas"  >
+      <ion-card class="cartapelicula"> 
+        <ion-card-header>
+          <ion-img class="fotopelicula" src="../assets/logo.png"></ion-img>
+          <ion-card-subtitle> {{pelicula.clase}}</ion-card-subtitle>
+          <ion-card-title>{{pelicula.titulo}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{pelicula.descripcion}}<br>
+             GÉNERO:{{pelicula.genero}}  <br>
+              DURACIÓN: {{pelicula.duracion}} <br>
+              ELENCO: {{pelicula.elenco}}
+              PRODUCIDA POR: {{pelicula.produccion}}
+        </ion-card-content>
+        <ion-item>
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label>{{pelicula.year}}</ion-label>
+          <ion-button color="dark" fill="outline" slot="end" >Ver detalles</ion-button>
+        </ion-item>
+      </ion-card>
+    
+    </ion-col>
+    
+  </ion-row>
+</ion-grid>
+
+
+</ion-content>
+

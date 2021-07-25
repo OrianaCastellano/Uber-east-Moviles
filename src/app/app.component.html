@@ -1,0 +1,25 @@
+<ion-app>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>
+
+<ion-menu side="end" content-id="main" autoHide="true">
+  <ion-content>
+    <ion-list>
+        <ion-menu-toggle>
+          <ion-title color="danger">Opciones</ion-title>
+          <ion-item routerLink="/yo">
+        <ion-icon name="person" color="danger" class="icon"></ion-icon>Editar de Perfil
+        </ion-item>
+        <ion-item routerLink="/miscomentarios">
+          <ion-icon name="chatbubbles" color="danger" class="icon"></ion-icon>Mis Compras
+        </ion-item>
+        <ion-item routerLink="/misfavoritos">
+          <ion-icon name="happy" color="danger" class="icon"></ion-icon>Mis Restaurantes Favoritos
+        </ion-item>
+  <ion-item routerLink="/login">
+    <ion-icon name="moon" color="danger" class="icon"></ion-icon> Cerrar Sesión 
+</ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+  </ion-content>
+</ion-menu>

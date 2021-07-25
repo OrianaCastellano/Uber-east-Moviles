@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons>
+      <h1>BIENVENIDO</h1>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content class="auth-form">
+    <ion-img class="usuariofoto" src="../assets/logo.png"></ion-img>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-button class="loguearse" [routerLink]="['/login/usuario']" size="small" expand="block" color="primary">¿Eres Usuario?</ion-button>
+        <ion-button class="loguearse" [routerLink]="['/login/restaurante']" size="small" expand="block" color="primary">¿Eres Restaurante?</ion-button>
+        <ion-button class="loguearse" [routerLink]="['/login/chofer']" size="small" expand="block" color="primary">¿Eres Chofer?</ion-button>
+        
+        <span class="divider line one-line"></span>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
