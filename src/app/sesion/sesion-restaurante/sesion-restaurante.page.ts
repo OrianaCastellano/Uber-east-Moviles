@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sesion-restaurante.page.scss'],
 })
 export class SesionRestaurantePage implements OnInit {
-  lista: string[];
+ lista: string[];
 
   producto: any=[{
     titulo: "Hamburguesa",
@@ -23,6 +23,15 @@ export class SesionRestaurantePage implements OnInit {
       restaurante: "Gelart",
       precio: "5$" ,
       ubicacion: "Urb.Coromoto. Calle 171 con av.43",},
+      {
+        titulo: "Torta de Chocolate",
+        restaurante: "Gelart",
+        precio: "5$" ,
+        ubicacion: "Urb.Coromoto. Calle 171 con av.43",}, 
+        {
+          titulo: "Torta de Chocolate",
+          restaurante: "Gelart",
+          precio: "5$" ,}
 ];
   constructor() { }
 
