@@ -31,10 +31,6 @@ const routes: Routes = [
     path: 'yo',
     loadChildren: () => import('./yo/yo.module').then( m => m.YOPageModule)
   },
-  {
-    path: 'miscomentarios',
-    loadChildren: () => import('./miscomentarios/miscomentarios.module').then( m => m.MiscomentariosPageModule)
-  },
  
   
 ];
