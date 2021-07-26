@@ -1,2 +1,39 @@
+<ion-header>
+    <ion-toolbar color="primary">
+  <ion-buttons>
+    <ion-img src="../assets/logo.png"></ion-img>
+    <ion-menu-button color="dark" slot="end"></ion-menu-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  
+  <h1 >
+      TU MENÚ   <ion-icon class="icon"  color="dark" name="clipboard"></ion-icon>
+   </h1>
+   <ion-grid>
+   <ion-row>
+     <ion-col *ngFor="let producto of producto"  >
+       <ion-card class="cartaproducto"> 
+         <ion-card-header>
+           <ion-img class="fotoproducto" src="../assets/fotopro.jpg"></ion-img>
+           <ion-card-subtitle> {{producto.restaurante}}</ion-card-subtitle>
+           <ion-card-title>{{producto.titulo}}</ion-card-title>
+         </ion-card-header>
+         <ion-card-content>
+               PRECIO:{{producto.precio}}  <br>
+               UBICACION: {{producto.ubicacion}}
+         </ion-card-content>
+         <ion-item>
+           <ion-icon name="create" slot="start"></ion-icon>
+           <ion-button color="dark" fill="outline" slot="end" >
+           activo/inactivo<ion-icon ></ion-icon></ion-button>
+           
+         </ion-item>
+       </ion-card>
+     
+     </ion-col>
+     
+   </ion-row>
+ </ion-grid>  
 
-
+ 
