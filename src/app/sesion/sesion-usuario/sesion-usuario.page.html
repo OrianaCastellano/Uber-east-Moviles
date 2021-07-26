@@ -1,13 +1,12 @@
 <ion-header>
-  <ion-toolbar color="danger">
+  <ion-toolbar color="gray">
 <ion-buttons>
   <ion-img src="../assets/logo.png"></ion-img>
-  <ion-menu-button slot="end"></ion-menu-button>
-  <ion-label>Menú</ion-label>  
+  <ion-menu-button color="dark" slot="end"></ion-menu-button>
 </ion-buttons>
 
 </ion-toolbar>
-<ion-searchbar  showCancelButton animated placeholder="Buscar"(ionchange)="buscar($event)"></ion-searchbar>
+<ion-searchbar color="dark"  showCancelButton animated placeholder="Buscar"(ionchange)="buscar($event)"></ion-searchbar>
 </ion-header>
 <ion-content>
   <ion-slides  [options]="slideOpts">
