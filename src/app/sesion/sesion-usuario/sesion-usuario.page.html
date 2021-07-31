@@ -1,7 +1,7 @@
-<ion-header>
+<ion-header >
   <ion-toolbar color="gray">
 <ion-buttons>
-  <ion-img src="../assets/logo.png"></ion-img>
+  <ion-img class="img"src="../assets/logo.png"></ion-img>
   <ion-menu-button color="dark" slot="end"></ion-menu-button>
 </ion-buttons>
 
@@ -66,7 +66,7 @@
        </ion-card-content>
        <ion-item>
          <ion-icon name="" slot="start"></ion-icon>
-         <ion-button color="dark" fill="outline" slot="end" >
+         <ion-button color="dark" fill="outline" slot="end" routerLink="/menurestaurante/{{restaurante.id}}">
           Ver Menú<ion-icon name="clipboard"></ion-icon></ion-button>
          <ion-icon name="heart" color="danger"></ion-icon>
        </ion-item>

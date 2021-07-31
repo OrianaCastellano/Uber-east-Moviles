@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'yo',
     loadChildren: () => import('./yo/yo.module').then( m => m.YOPageModule)
   },
+  {
+    path: 'menurestaurante/:id',
+    loadChildren: () => import('./menurestaurante/menurestaurante.module').then( m => m.MenurestaurantePageModule)
+  },
+  {
+    path: 'miscompras-usuario',
+    loadChildren: () => import('./miscompras-usuario/miscompras-usuario.module').then( m => m.MiscomprasUsuarioPageModule)
+  },
  
   
 ];

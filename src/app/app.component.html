@@ -4,19 +4,33 @@
 
 <ion-menu side="end" content-id="main" autoHide="true">
   <ion-content>
-    <ion-list>
+    <ion-list *ngIf="multilevelservice.users.type==1">
         <ion-menu-toggle>
           <ion-title color="dark">TUS OPCIONES</ion-title>
           <ion-item routerLink="/yo/usuario">
         <ion-icon  name="person"  class="icon"></ion-icon>Editar Perfil
         </ion-item>
-        <ion-item routerLink="/home">
+        <ion-item routerLink="/miscompras-usuario">
           <ion-icon name="cart"  class="icon"></ion-icon>Mi Pedido Actual
         </ion-item>
         <ion-item routerLink="/home">
           <ion-icon name="heart"  class="icon"></ion-icon>Mis Restaurantes Favoritos
         </ion-item>
         <ion-item routerLink="/home">
+          <ion-icon name="pricetags"  class="icon"></ion-icon>Mis Compras/Facturas
+        </ion-item>
+  <ion-item routerLink="/login/usuario">
+    <ion-icon name="moon" class="icon"></ion-icon> Cerrar Sesión 
+</ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+      <ion-list *ngIf="multilevelservice.users.type==2">
+        <ion-menu-toggle>
+          <ion-title color="dark">TUS OPCIONES</ion-title>
+          <ion-item routerLink="/yo/usuario">
+        <ion-icon  name="person"  class="icon"></ion-icon>Editar Perfil
+        </ion-item>
+        <ion-item routerLink="/sesion-restaurante">
           <ion-icon name="pricetags"  class="icon"></ion-icon>Mis Compras/Facturas
         </ion-item>
   <ion-item routerLink="/login/usuario">

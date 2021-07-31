@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MultilevelService } from 'src/app/multilevel.service';
 @Component({
   selector: 'app-login-restaurante',
   templateUrl: './login-restaurante.page.html',
@@ -12,6 +13,7 @@ export class LoginRestaurantePage implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
+    private multilevelservice: MultilevelService,
   ) { }
 
   ngOnInit() {
@@ -22,7 +24,13 @@ export class LoginRestaurantePage implements OnInit {
   }
   async login() {
     this.router.navigateByUrl("/sesion/restaurante", { replaceUrl: true });
-    
+    //jeliana aca llamas al servicio multilevel service para que el multilevel service hagfa el inicio de sesion  
+    this.multilevelservice.setusers(
+      {
+      name: "Ori",
+      type: 2
+      }
+      )
     console.log (this.credentials.value)
   } 
   

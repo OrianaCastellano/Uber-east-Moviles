@@ -1,0 +1,36 @@
+<ion-header >
+  <ion-toolbar color="gray">
+<ion-buttons>
+  <ion-img class="img"src="../assets/logo.png"></ion-img>
+  <ion-menu-button color="dark" slot="end"></ion-menu-button>
+</ion-buttons>
+</ion-toolbar>
+<ion-searchbar color="dark"  showCancelButton animated placeholder="Buscar"(ionchange)="buscar($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let producto of multilevelservice.pedidos"  >
+        <ion-card class="cartaproducto"> 
+          <ion-card-header>
+            <ion-img class="fotoproducto" src="../assets/fotopro.jpg"></ion-img>
+            <ion-card-title>{{producto.titulo}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+                PRECIO:{{producto.precio}}  <br>
+                DESCRIPCION: {{producto.descripcion}} <br>
+                CANTIDAD: {{producto.cantidad}}
+          </ion-card-content>
+          <ion-item>
+            <ion-icon name="" slot="start"></ion-icon>
+            <ion-button color="dark" fill="outline" slot="end" (click)="multilevelservice.borrarPedido(producto.id)">
+              Borrar del pedido<ion-icon ></ion-icon></ion-button>
+          </ion-item>
+        </ion-card>
+      
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+  </ion-content>
