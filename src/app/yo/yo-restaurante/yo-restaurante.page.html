@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-toolbar color="danger">
+  <ion-toolbar color="primary">
     <ion-buttons>
       <ion-img class="img" src="../assets/logo.png"></ion-img>
-      <ion-menu-button slot="end"></ion-menu-button>
-      <ion-label>Menú</ion-label>
+      <ion-menu-button slot="end" color="dark"></ion-menu-button>
+      <ion-label color="dark">Menú</ion-label>
       <ion-button  color="dark" slot="end"[routerLink]="['/sesion/restaurante']">
-        <ion-icon name="flower"></ion-icon>Home</ion-button>
+        <ion-icon name="home"></ion-icon>Home</ion-button>
     </ion-buttons>
     </ion-toolbar>
-    <ion-searchbar  showCancelButton animated placeholder="Buscar"(ionchange)="buscar($event)"></ion-searchbar>
+    
 </ion-header>
 
 <ion-content>
