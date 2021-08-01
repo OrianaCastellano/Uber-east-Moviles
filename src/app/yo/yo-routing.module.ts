@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'restaurante',
     loadChildren: () => import('./yo-restaurante/yo-restaurante.module').then( m => m.YoRestaurantePageModule)
+  },
+  {
+    path: 'chofer',
+    loadChildren: () => import('./yo-chofer/yo-chofer.module').then( m => m.YoChoferPageModule)
   }
 ];
 

@@ -39,9 +39,7 @@ const routes: Routes = [
     path: 'miscompras-usuario',
     loadChildren: () => import('./miscompras-usuario/miscompras-usuario.module').then( m => m.MiscomprasUsuarioPageModule)
   },
-  
  
-  
 ];
 
 @NgModule({
