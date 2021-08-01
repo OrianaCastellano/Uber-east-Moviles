@@ -7,8 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class MultilevelService {
 
   url: string = 'http://localhost:3000/';
-  users: any = {}
+  users: any = {};
   pedidos: any = [];
+  total: number=0;
   constructor(private http: HttpClient) {
     console.log("Multiservice")
   }
@@ -30,8 +31,22 @@ export class MultilevelService {
       this.pedidos.push(pedido);
     }
     console.log(this.pedidos);
+    this.calcularTotal();
   }
   borrarPedido(id) {
-    this.pedidos = this.pedidos.filter(pedido => { pedido.id != id });
+    console.log(this.pedidos);
+    this.pedidos = this.pedidos.filter(pedido => { return pedido.id != id });
+    console.log(id);
+    this.calcularTotal();
   }
+calcularTotal(){
+  let total = 0;
+for(let pedido of this.pedidos){
+total += pedido.cantidad * pedido.precio;
 }
+this.total = total;
+console.log(this.total);
+}
+}
+
+

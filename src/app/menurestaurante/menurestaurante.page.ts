@@ -16,22 +16,22 @@ export class MenurestaurantePage implements OnInit, OnDestroy {
   producto: any=[{
     id: 1,
     titulo: "Hamburguesa",
-    precio: "3$" ,
+    precio: 3 ,
     descripcion: "aaa",
   },{
     id:2,
     titulo: "Hamburguesa",
-    precio: "3$" ,
+    precio: 3 ,
     descripcion: "aaa",
   },{
     id:3,
     titulo: "Hamburguesa",
-    precio: "3$" ,
+    precio: 3,
     descripcion: "aaa",
   },{
     id:4,
     titulo: "Hamburguesa",
-    precio: "3$" ,
+    precio: 3 ,
     descripcion: "aaa",
   },
 ];
