@@ -22,8 +22,9 @@
   <ion-item routerLink="/login/usuario">
     <ion-icon name="moon" class="icon"></ion-icon> Cerrar Sesión 
 </ion-item>
-        </ion-menu-toggle>
-      </ion-list>
+ </ion-menu-toggle>
+</ion-list>
+
       <ion-list *ngIf="multilevelservice.users.type==2">
         <ion-menu-toggle>
           <ion-title color="dark">TUS OPCIONES</ion-title>
@@ -32,6 +33,21 @@
         </ion-item>
         <ion-item routerLink="/sesion-restaurante">
           <ion-icon name="pricetags"  class="icon"></ion-icon>Mis Pedidos/Mis Ventas
+        </ion-item>
+  <ion-item routerLink="/login/restaurante">
+    <ion-icon name="moon" class="icon"></ion-icon> Cerrar Sesión 
+</ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+
+      <ion-list *ngIf="multilevelservice.users.type==3">
+        <ion-menu-toggle>
+          <ion-title color="dark">TUS OPCIONES</ion-title>
+          <ion-item routerLink="/yo/restaurante">
+        <ion-icon  name="person"  class="icon"></ion-icon>Editar Perfil
+        </ion-item>
+        <ion-item routerLink="/sesion-restaurante">
+          <ion-icon name="pricetags"  class="icon"></ion-icon>Pedidos Listos
         </ion-item>
   <ion-item routerLink="/login/restaurante">
     <ion-icon name="moon" class="icon"></ion-icon> Cerrar Sesión 

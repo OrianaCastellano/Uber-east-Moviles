@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+<ion-buttons>
+  <ion-img class="img" src="../assets/logo.png"></ion-img>
+  <ion-menu-button color="dark" slot="end"></ion-menu-button>
+</ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<h1 >
+  TUS PEDIDOS POR ENTREGAR <ion-icon class="icon"  color="dark" name="clipboard"></ion-icon>
+</h1>
+<ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let delivery of  delivery "  >
+      <ion-card class="cartaproducto"> 
+        <ion-card-header>
+          <ion-card-title>{{delivery.cliente}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+              PRECIO:{{delivery.precio}}  <br>
+              UBICACION: {{delivery.ubicacion}}
+        </ion-card-content>
+        <ion-item>
+          <ion-icon name="checkbox-outline" slot="start"></ion-icon>
+          <ion-button color="dark" fill="outline" slot="end" >Aceptar Delivery<ion-icon></ion-icon></ion-button>
+        </ion-item>
+      </ion-card>
+    
+    </ion-col>
+    
+  </ion-row>
+</ion-grid>  

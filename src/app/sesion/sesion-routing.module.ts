@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'restaurante',
     loadChildren: () => import('./sesion-restaurante/sesion-restaurante.module').then( m => m.SesionRestaurantePageModule)
+  },
+  {
+    path: 'chofer',
+    loadChildren: () => import('./sesion-chofer/sesion-chofer.module').then( m => m.SesionChoferPageModule)
   }
 ];
 
