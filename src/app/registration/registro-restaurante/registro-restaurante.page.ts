@@ -19,7 +19,7 @@ export class RegistroRestaurantePage implements OnInit {
 
   ngOnInit() {
     this.credentials = this.fb.group({
-      Email: ['', [Validators.required]],
+      email: ['', [Validators.required]],
       password: ['', [Validators.required]],
       name: ['', [Validators.required]],
       direction: ['', [Validators.required]],
@@ -29,10 +29,10 @@ export class RegistroRestaurantePage implements OnInit {
       firstname: ['', [Validators.required]],
     });
   }
-  async RegisterRest() {
+  async registerRest() {
     // this.router.navigateByUrl("/login/restaurante", { replaceUrl: true });
     this.multilevelservice
-      .register(this.credentials.value)
+      .registerRest(this.credentials.value)
       .subscribe((res: any) => {
         if (res.status == 200) {
           this.router.navigateByUrl('/login/restaurante', { replaceUrl: true });
@@ -45,7 +45,7 @@ export class RegistroRestaurantePage implements OnInit {
     console.log(this.credentials.value);
   }
 
-  get Email() {
+  get email() {
     return this.credentials.get('Email');
   }
 
@@ -56,7 +56,18 @@ export class RegistroRestaurantePage implements OnInit {
     return this.credentials.get('firstname');
   }
 
-  get name() {
-    return this.credentials.get('name');
+  get latitude() {
+    return this.credentials.get('latitude');
+  }
+
+  get longitude() {
+    return this.credentials.get('longitude');
+  }
+
+  get foto() {
+    return this.credentials.get('foto');
+  }
+  get direccion() {
+    return this.credentials.get('direccion');
   }
 }

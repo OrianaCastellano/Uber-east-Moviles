@@ -46,10 +46,6 @@ export class MultilevelService {
     console.log(this.total);
   }
 
-  get_movies() {
-    return this.http.get(this.url + 'movies/allmovies');
-  }
-
   get_establishment() {
     return this.http.get(this.url + '/establishment/getEstablishments');
   }
@@ -86,5 +82,45 @@ export class MultilevelService {
     let options = { body: form, headers };
     console.log(options);
     return this.http.post(this.url + `/driver/signup`, form, options);
+  }
+
+  loginConductor(form) {
+    form = JSON.stringify(form);
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+    let options = { body: form, headers };
+    console.log(options);
+    return this.http.post(this.url + `/driver/signup`, form, options);
+  }
+
+  loginUser(form) {
+    form = JSON.stringify(form);
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+    let options = { body: form, headers };
+    console.log(options);
+    return this.http.post(this.url + `/user/signin`, form, options);
+  }
+
+  loginChofer(form) {
+    form = JSON.stringify(form);
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+    let options = { body: form, headers };
+    console.log(options);
+    return this.http.post(this.url + `/driver/signin`, form, options);
+  }
+
+  loginRest(form) {
+    form = JSON.stringify(form);
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
+    let options = { body: form, headers };
+    console.log(options);
+    return this.http.post(this.url + `/establishment/signin`, form, options);
   }
 }

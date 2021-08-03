@@ -19,18 +19,21 @@ export class RegistroChoferPage implements OnInit {
 
   ngOnInit() {
     this.credentials = this.fb.group({
-      Email: ['', [Validators.required]],
+      email: ['', [Validators.required]],
       password: ['', [Validators.required]],
       name: ['', [Validators.required]],
-      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      foto: ['', [Validators.required]],
+      color: ['', [Validators.required]],
+      placa: ['', [Validators.required]],
     });
   }
-  async RegisterConductor() {
+  async registerConductor() {
     this.multilevelservice
-      .register(this.credentials.value)
+      .registerConductor(this.credentials.value)
       .subscribe((res: any) => {
         if (res.status == 200) {
-          this.router.navigateByUrl('/login/usuario', { replaceUrl: true });
+          this.router.navigateByUrl('/login/chofer', { replaceUrl: true });
         } else if (res.status == 403) {
           alert('Ya existe este correo');
         } else {
@@ -40,18 +43,29 @@ export class RegistroChoferPage implements OnInit {
     console.log(this.credentials.value);
   }
 
-  get Email() {
-    return this.credentials.get('Email');
+  get email() {
+    return this.credentials.get('email');
   }
 
   get password() {
     return this.credentials.get('password');
   }
-  get firstname() {
-    return this.credentials.get('firstname');
+  get lastname() {
+    return this.credentials.get('lastname');
   }
 
   get name() {
     return this.credentials.get('name');
+  }
+
+  get foto() {
+    return this.credentials.get('foto');
+  }
+
+  get color() {
+    return this.credentials.get('color');
+  }
+  get placa() {
+    return this.credentials.get('placa');
   }
 }

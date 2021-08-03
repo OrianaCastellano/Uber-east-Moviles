@@ -18,22 +18,37 @@ export class LoginUsuarioPage implements OnInit {
 
   ngOnInit() {
     this.credentials = this.fb.group({
-      Email: ['', [Validators.required]],
+      email: ['', [Validators.required]],
       password: ['', [Validators.required]],
     });
   }
-  async login() {
-    this.router.navigateByUrl('/sesion/usuario', { replaceUrl: true });
-    //jeliana aca llamas al servicio multilevel service para que el multilevel service hagfa el inicio de sesion
-    this.multilevelservice.setusers({
-      name: 'Ori',
-      type: 1,
-    });
+  async loginUser() {
+    this.multilevelservice
+      .loginUser(this.credentials.value)
+      .subscribe((res: any) => {
+        console.log(res);
+        if (res.status == 200) {
+          let user = {
+            name: res.data[0].profile.u_name,
+            lastname: res.data[0].profile.u_lastname,
+            email: res.data[0].profile.u_email,
+            id: res.data[0].profile.u_id,
+            token: res.data[0].token,
+            type: 1,
+          };
+          this.multilevelservice.setusers(user);
+          this.router.navigateByUrl('/sesion/usuario', { replaceUrl: true });
+        } else if (res.status == 403) {
+          alert('Error al iniciar sesion');
+        } else {
+          alert('Error del servidor');
+        }
+      });
     console.log(this.credentials.value);
   }
 
   get email() {
-    return this.credentials.get('Email');
+    return this.credentials.get('email');
   }
 
   get password() {

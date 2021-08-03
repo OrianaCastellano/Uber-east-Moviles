@@ -1,31 +1,36 @@
 <ion-header>
   <ion-toolbar color="danger">
-<ion-buttons>
-  <ion-img class="img" src="../assets/logo.png"></ion-img>
-  <ion-menu-button color="dark" slot="end"></ion-menu-button>
-</ion-buttons>
-</ion-toolbar>
+    <ion-buttons>
+      <ion-img class="img" src="../assets/logo.png"></ion-img>
+      <ion-menu-button color="dark" slot="end"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
-
-<h1 >
-  TUS PEDIDOS POR ENTREGAR <ion-icon class="icon"  color="dark" name="clipboard"></ion-icon>
-</h1>
-<ion-grid>
-  <ion-row>
-    <ion-col *ngFor="let delivery of  delivery "  >
-      <ion-card class="cartaproducto"> 
-        <ion-card-header>
-          <ion-card-title>Nombre Cliente: {{delivery.cliente}}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-        Numero de Factura: {{delivery.idfactura}}
-        </ion-card-content>
-        <ion-item>
-          <ion-button color="dark" fill="outline" slot="end" ><ion-icon name="checkbox-outline" slot="start"></ion-icon>Aceptar Delivery</ion-button>
-        </ion-item>
-      </ion-card>
-    
-    </ion-col>
-    
-  </ion-row>
-</ion-grid>  
+<ion-content>
+  <h1>
+    TUS PEDIDOS POR ENTREGAR
+    <ion-icon class="icon" color="dark" name="clipboard"></ion-icon>
+  </h1>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let delivery of  delivery ">
+        <ion-card class="cartaproducto">
+          <ion-card-header>
+            <ion-card-title
+              >Nombre Cliente: {{delivery.cliente}}</ion-card-title
+            >
+          </ion-card-header>
+          <ion-card-content>
+            Numero de Factura: {{delivery.idfactura}}
+          </ion-card-content>
+          <ion-item>
+            <ion-button color="dark" fill="outline" slot="end"
+              ><ion-icon name="checkbox-outline" slot="start"></ion-icon>Aceptar
+              Delivery</ion-button
+            >
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

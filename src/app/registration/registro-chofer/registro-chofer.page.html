@@ -3,19 +3,20 @@
     <ion-buttons>
       <ion-img class="img" src="../assets/logo.png"></ion-img>
       <ion-row>
-        <ion-back-button [routerLink]="['/home']"></ion-back-button> 
-         </ion-row>
+        <ion-back-button [routerLink]="['/home']"></ion-back-button>
+      </ion-row>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <form  class="FormularioRegistro"(ngSubmit)="Register()"[formGroup]="credentials"> 
+  <form
+    class="FormularioRegistro"
+    (ngSubmit)="registerConductor()"
+    [formGroup]="credentials"
+  >
     <ion-img class="usuariofoto" src="../assets/usuariocho.png"></ion-img>
-    <h1>
-Regístrate
-    </h1>
+    <h1>Regístrate</h1>
     <ion-item lines="full">
       <ion-label position="floating">Nombre</ion-label>
       <ion-input type="text" required formControlName="name"></ion-input>
@@ -23,22 +24,47 @@ Regístrate
 
     <ion-item lines="full">
       <ion-label position="floating">Apellido</ion-label>
-      <ion-input type="text" required formControlName="firstname"></ion-input>
+      <ion-input type="text" required formControlName="lastname"></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Correo Electronico</ion-label>
-      <ion-input type="text" required formControlName="Email"></ion-input>
+      <ion-input type="text" required formControlName="email"></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Ingresa tu Contraseña</ion-label>
-      <ion-input type="password" required formControlName="password"></ion-input>
+      <ion-input
+        type="password"
+        required
+        formControlName="password"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Placa del Vehiculo</ion-label>
+      <ion-input type="text" required formControlName="placa"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Color del Vehiculo</ion-label>
+      <ion-input type="text" required formControlName="color"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Foto</ion-label>
+      <ion-input type="text" required formControlName="foto"></ion-input>
     </ion-item>
 
     <ion-row>
       <ion-col>
-        <ion-button class= "Registrarse" type="submit" color="danger" expand="block">Registrarse</ion-button>
+        <ion-button
+          class="Registrarse"
+          type="submit"
+          color="danger"
+          expand="block"
+          >Registrarse</ion-button
+        >
       </ion-col>
     </ion-row>
   </form>
