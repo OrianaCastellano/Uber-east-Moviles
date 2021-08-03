@@ -13,39 +13,32 @@ export class MenurestaurantePage implements OnInit, OnDestroy {
 
   lista: string[];
 
-  producto: any=[{
-    id: 1,
-    titulo: "Hamburguesa",
-    precio: 3 ,
-    descripcion: "aaa",
-  },{
-    id:2,
-    titulo: "Hamburguesa",
-    precio: 3 ,
-    descripcion: "aaa",
-  },{
-    id:3,
-    titulo: "Hamburguesa",
-    precio: 3,
-    descripcion: "aaa",
-  },{
-    id:4,
-    titulo: "Hamburguesa",
-    precio: 3 ,
-    descripcion: "aaa",
-  },
-];
+  producto: any = [];
 
-  constructor(private route: ActivatedRoute,
-    public multilevelservice: MultilevelService) {}
+  constructor(
+    private route: ActivatedRoute,
+    public multilevelservice: MultilevelService
+  ) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-       this.id = +params['id']; 
-       console.log(this.id)
+    this.sub = this.route.params.subscribe((params) => {
+      this.id = +params['id'];
+      this.multilevelservice
+        .get_productByIdEsta(this.id)
+        .subscribe((res: any) => {
+          for (let row of res.data) {
+            this.producto.push({
+              id: row.p_id,
+              titulo: row.p_name,
+              descripcion: row.p_description,
+              precio: row.p_price,
+            });
+          }
+        });
     });
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
-  }}
+  }
+}

@@ -1,20 +1,28 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
 const routes: Routes = [
   {
     path: 'usuario',
-    loadChildren: () => import('./login-usuario/login-usuario.module').then( m => m.LoginUsuarioPageModule)
+    loadChildren: () =>
+      import('./login-usuario/login-usuario.module').then(
+        (m) => m.LoginUsuarioPageModule
+      ),
   },
   {
     path: 'chofer',
-    loadChildren: () => import('./login-chofer/login-chofer.module').then( m => m.LoginChoferPageModule)
+    loadChildren: () =>
+      import('./login-chofer/login-chofer.module').then(
+        (m) => m.LoginChoferPageModule
+      ),
   },
   {
     path: 'restaurante',
-    loadChildren: () => import('./login-restaurante/login-restaurante.module').then( m => m.LoginRestaurantePageModule)
-  }
+    loadChildren: () =>
+      import('./login-restaurante/login-restaurante.module').then(
+        (m) => m.LoginRestaurantePageModule
+      ),
+  },
 ];
 
 @NgModule({
