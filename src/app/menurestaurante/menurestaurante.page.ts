@@ -10,9 +10,8 @@ import { MultilevelService } from '../multilevel.service';
 export class MenurestaurantePage implements OnInit, OnDestroy {
   id: number;
   private sub: any;
-
   lista: string[];
-
+  establecimientos: string[];
   producto: any = [];
 
   constructor(

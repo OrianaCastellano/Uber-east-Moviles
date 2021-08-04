@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class MultilevelService {
-  url: string = 'http://localhost:3002/api/v1';
+  url: string = 'https://uber-east-proyect.herokuapp.com/api/v1';
   users: any = {};
   pedidos: any = [];
   total: number = 0;
@@ -50,11 +50,40 @@ export class MultilevelService {
     return this.http.get(this.url + '/establishment/getEstablishments');
   }
 
+  modificarEsta() {
+    return this.http.get(this.url + '/establishment/uptadeEstablishments/:id');
+  }
+
+  eliminarEsta() {
+    return this.http.get(this.url + '/establishment/deleteEstablishments/:id');
+  }
+
+  modificarProducto() {
+    return this.http.get(this.url + '/product/uptadeProducts/:id');
+  }
+
+  eliminarProducto() {
+    return this.http.get(this.url + '/product/deleteProducts/:id');
+  }
+
+  agregarProducto() {
+    return this.http.get(this.url + '/product/createProducts');
+  }
+
+  obtenerProductos() {
+    return this.http.get(this.url + '/product/getProducts');
+  }
+
   get_productByIdEsta(id) {
     return this.http.get(
       this.url + '/product/getProductsByIdEstablishment/' + id
     );
   }
+
+  get_productById(id) {
+    return this.http.get(this.url + '/product/getProductsById/:id' + id);
+  }
+
   register(form) {
     form = JSON.stringify(form);
     let headers = new HttpHeaders({

@@ -106,14 +106,7 @@ let HomePage = class HomePage {
     constructor(mlevel) {
         this.mlevel = mlevel;
     }
-    ngOnInit() {
-        this.mlevel.get_movies().subscribe((data) => {
-            console.log('Ejecutando');
-            console.log(data);
-        }, Error => {
-            console.log(Error);
-        });
-    }
+    ngOnInit() { }
 };
 HomePage.ctorParameters = () => [
     { type: _multilevel_service__WEBPACK_IMPORTED_MODULE_2__.MultilevelService }
@@ -130,45 +123,6 @@ HomePage = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
 
 /***/ }),
 
-/***/ 568:
-/*!***************************************!*\
-  !*** ./src/app/multilevel.service.ts ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "MultilevelService": () => (/* binding */ MultilevelService)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 1841);
-
-
-
-let MultilevelService = class MultilevelService {
-    constructor(http) {
-        this.http = http;
-        this.url = 'http://localhost:3000/';
-    }
-    get_movies() {
-        return this.http.get(this.url + 'movies/allmovies');
-    }
-};
-MultilevelService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient }
-];
-MultilevelService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
-        providedIn: 'root'
-    })
-], MultilevelService);
-
-
-
-/***/ }),
-
 /***/ 2610:
 /*!*************************************!*\
   !*** ./src/app/home/home.page.scss ***!
@@ -180,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".auth-form {\n  text-align: center;\n  margin: auto;\n  display: flex;\n}\n.auth-form ion-grid {\n  margin: auto;\n  width: 400px;\n}\n.auth-form .usuariofoto {\n  width: 250px;\n  margin: auto;\n}\nh1 {\n  text-align: center;\n  color: dark;\n  font-family: fantasy, \"Times New Roman\", Times, serif;\n  padding: 0 30PX 0 0;\n  margin: auto;\n}\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtBQUNGO0FBQUU7RUFDRSxZQUFBO0VBQ0EsWUFBQTtBQUVKO0FBQUU7RUFDRSxZQUFBO0VBQ0EsWUFBQTtBQUVKO0FBRUE7RUFDRSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxxREFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtBQUNGO0FBRUE7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUFDRjtBQUVBO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0VBRUEsY0FBQTtFQUdBLFNBQUE7QUFGRjtBQUtBO0VBQ0UscUJBQUE7QUFGRiIsImZpbGUiOiJob21lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hdXRoLWZvcm0ge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBpb24tZ3JpZHtcclxuICAgIG1hcmdpbjphdXRvO1xyXG4gICAgd2lkdGg6IDQwMHB4O1xyXG4gIH1cclxuICAudXN1YXJpb2ZvdG97XHJcbiAgICB3aWR0aDoyNTBweDtcclxuICAgIG1hcmdpbjphdXRvO1xyXG59XHJcbn1cclxuXHJcbmgxe1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBjb2xvcjpkYXJrO1xyXG4gIGZvbnQtZmFtaWx5OmZhbnRhc3ksICdUaW1lcyBOZXcgUm9tYW4nLCBUaW1lcywgc2VyaWY7XHJcbiAgcGFkZGluZzogMCAzMFBYIDAgMCA7XHJcbiAgbWFyZ2luOmF1dG87XHJcbn1cclxuXHJcbiNjb250YWluZXIgc3Ryb25nIHtcclxuICBmb250LXNpemU6IDIwcHg7XHJcbiAgbGluZS1oZWlnaHQ6IDI2cHg7XHJcbn1cclxuXHJcbiNjb250YWluZXIgcCB7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG4gIGxpbmUtaGVpZ2h0OiAyMnB4O1xyXG5cclxuICBjb2xvcjogIzhjOGM4YztcclxuICBcclxuXHJcbiAgbWFyZ2luOiAwO1xyXG59XHJcblxyXG4jY29udGFpbmVyIGEge1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG4iXX0= */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (".auth-form {\n  text-align: center;\n  margin: auto;\n  display: flex;\n}\n.auth-form ion-grid {\n  margin: auto;\n  width: 400px;\n}\n.auth-form .usuariofoto {\n  width: 250px;\n  margin: auto;\n}\nh1 {\n  text-align: center;\n  color: dark;\n  font-family: fantasy, \"Times New Roman\", Times, serif;\n  padding: 0 30PX 0 0;\n  margin: auto;\n}\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtBQUNGO0FBQUU7RUFDRSxZQUFBO0VBQ0EsWUFBQTtBQUVKO0FBQUU7RUFDRSxZQUFBO0VBQ0EsWUFBQTtBQUVKO0FBR0E7RUFDRSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxxREFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtBQUFGO0FBR0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUFBRjtBQUdBO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0VBRUEsY0FBQTtFQUdBLFNBQUE7QUFIRjtBQU1BO0VBQ0UscUJBQUE7QUFIRiIsImZpbGUiOiJob21lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hdXRoLWZvcm0ge1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBpb24tZ3JpZHtcclxuICAgIG1hcmdpbjphdXRvO1xyXG4gICAgd2lkdGg6IDQwMHB4O1xyXG4gIH1cclxuICAudXN1YXJpb2ZvdG97XHJcbiAgICB3aWR0aDoyNTBweDtcclxuICAgIG1hcmdpbjphdXRvO1xyXG59XHJcbn1cclxuXHJcblxyXG5oMXtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgY29sb3I6ZGFyaztcclxuICBmb250LWZhbWlseTpmYW50YXN5LCAnVGltZXMgTmV3IFJvbWFuJywgVGltZXMsIHNlcmlmO1xyXG4gIHBhZGRpbmc6IDAgMzBQWCAwIDAgO1xyXG4gIG1hcmdpbjphdXRvO1xyXG59XHJcblxyXG4jY29udGFpbmVyIHN0cm9uZyB7XHJcbiAgZm9udC1zaXplOiAyMHB4O1xyXG4gIGxpbmUtaGVpZ2h0OiAyNnB4O1xyXG59XHJcblxyXG4jY29udGFpbmVyIHAge1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBsaW5lLWhlaWdodDogMjJweDtcclxuXHJcbiAgY29sb3I6ICM4YzhjOGM7XHJcbiAgXHJcblxyXG4gIG1hcmdpbjogMDtcclxufVxyXG5cclxuI2NvbnRhaW5lciBhIHtcclxuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbn1cclxuIl19 */");
 
 /***/ }),
 
@@ -195,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-header>\r\n  <ion-toolbar color=\"gray\">\r\n    <ion-buttons>\r\n      <h1>BIENVENIDO</h1>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header> \r\n\r\n<ion-content class=\"auth-form\" >\r\n    <ion-img class=\"usuariofoto\" src=\"../assets/logo.png\"></ion-img>\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col align-self-center>\r\n        <ion-button class=\"loguearse\" [routerLink]=\"['/login/usuario']\" size=\"small\" expand=\"block\" color=\"dark\">¿Eres Usuario?</ion-button>\r\n        <ion-button class=\"loguearse\" [routerLink]=\"['/login/restaurante']\" size=\"small\" expand=\"block\" color=\"primary\">¿Eres Restaurante?</ion-button>\r\n        <ion-button class=\"loguearse\" [routerLink]=\"['/login/chofer']\" size=\"small\" expand=\"block\" color=\"danger\">¿Eres Chofer?</ion-button>\r\n        \r\n        <span class=\"divider line one-line\"></span>\r\n\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content> ");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\r\n\r\n<ion-content class=\"auth-form\" >\r\n    <ion-img class=\"usuariofoto\" src=\"../assets/logo.png\"></ion-img>\r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col align-self-center>\r\n        <ion-button class=\"loguearse1\" [routerLink]=\"['/login/usuario']\" size=\"small\" expand=\"block\" color=\"dark\">¿Eres Usuario?</ion-button>\r\n        <ion-button class=\"loguearse\" [routerLink]=\"['/login/restaurante']\" size=\"small\" expand=\"block\" color=\"primary\">¿Eres Restaurante?</ion-button>\r\n        <ion-button class=\"loguearse\" [routerLink]=\"['/login/chofer']\" size=\"small\" expand=\"block\" color=\"danger\">¿Eres Chofer?</ion-button>\r\n        \r\n        <span class=\"divider line one-line\"></span>\r\n\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content> ");
 
 /***/ })
 

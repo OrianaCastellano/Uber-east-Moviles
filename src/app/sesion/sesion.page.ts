@@ -6,19 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sesion.page.scss'],
 })
 export class SesionPage implements OnInit {
+  productos: string[];
 
-  lista: string[];
+  constructor() {}
 
- 
-  constructor() { 
-    
-  }
-
-
-  ngOnInit() {
-  }
-
-  
-
-
+  ngOnInit() {}
 }

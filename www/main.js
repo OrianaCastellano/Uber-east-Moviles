@@ -69,6 +69,18 @@ const routes = [
         path: 'yo',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_yo_yo_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./yo/yo.module */ 9924)).then(m => m.YOPageModule)
     },
+    {
+        path: 'menurestaurante/:id',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_menurestaurante_menurestaurante_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./menurestaurante/menurestaurante.module */ 3835)).then(m => m.MenurestaurantePageModule)
+    },
+    {
+        path: 'miscompras-usuario',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_miscompras-usuario_miscompras-usuario_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./miscompras-usuario/miscompras-usuario.module */ 6986)).then(m => m.MiscomprasUsuarioPageModule)
+    },
+    {
+        path: 'misfavoritos-usuario',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_misfavoritos_misfavoritos-usuario_misfavoritos-usuario_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./misfavoritos/misfavoritos-usuario/misfavoritos-usuario.module */ 8644)).then(m => m.MisfavoritosUsuarioPageModule)
+    },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -96,20 +108,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppComponent": () => (/* binding */ AppComponent)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./app.component.html */ 1106);
 /* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component.scss */ 3069);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _multilevel_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./multilevel.service */ 568);
+
+
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor() { }
+    constructor(multilevelservice, router) {
+        this.multilevelservice = multilevelservice;
+        this.router = router;
+    }
+    ngOnInit() {
+        this.router.navigateByUrl("/");
+    }
 };
-AppComponent.ctorParameters = () => [];
-AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+AppComponent.ctorParameters = () => [
+    { type: _multilevel_service__WEBPACK_IMPORTED_MODULE_2__.MultilevelService },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__.Router }
+];
+AppComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-root',
         template: _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_app_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -131,14 +156,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 5041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 158);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ 1841);
+/* harmony import */ var _multilevel_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./multilevel.service */ 568);
+
 
 
 
@@ -149,15 +176,157 @@ __webpack_require__.r(__webpack_exports__);
 
 let AppModule = class AppModule {
 };
-AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgModule)({
+AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__.BrowserModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClientModule],
-        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.IonicRouteStrategy }],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.BrowserModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClientModule],
+        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_8__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicRouteStrategy }, _multilevel_service__WEBPACK_IMPORTED_MODULE_2__.MultilevelService],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ 568:
+/*!***************************************!*\
+  !*** ./src/app/multilevel.service.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "MultilevelService": () => (/* binding */ MultilevelService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 1841);
+
+
+
+let MultilevelService = class MultilevelService {
+    constructor(http) {
+        this.http = http;
+        this.url = 'http://localhost:3002/api/v1';
+        this.users = {};
+        this.pedidos = [];
+        this.total = 0;
+        console.log('Multiservice');
+    }
+    setusers(users) {
+        this.users = users;
+    }
+    agregarPedido(pedido) {
+        let index = this.pedidos.findIndex((p) => {
+            return p.id == pedido.id;
+        });
+        if (index != -1) {
+            this.pedidos[index].cantidad += 1;
+        }
+        else {
+            pedido.cantidad = 1;
+            this.pedidos.push(pedido);
+        }
+        console.log(this.pedidos);
+        this.calcularTotal();
+    }
+    borrarPedido(id) {
+        console.log(this.pedidos);
+        this.pedidos = this.pedidos.filter((pedido) => {
+            return pedido.id != id;
+        });
+        console.log(id);
+        this.calcularTotal();
+    }
+    calcularTotal() {
+        let total = 0;
+        for (let pedido of this.pedidos) {
+            total += pedido.cantidad * pedido.precio;
+        }
+        this.total = total;
+        console.log(this.total);
+    }
+    get_establishment() {
+        return this.http.get(this.url + '/establishment/getEstablishments');
+    }
+    get_productByIdEsta(id) {
+        return this.http.get(this.url + '/product/getProductsByIdEstablishment/' + id);
+    }
+    register(form) {
+        form = JSON.stringify(form);
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8',
+        });
+        let options = { body: form, headers };
+        console.log(options);
+        return this.http.post(this.url + `/user/signup`, form, options);
+    }
+    registerRest(form) {
+        form = JSON.stringify(form);
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8',
+        });
+        let options = { body: form, headers };
+        console.log(options);
+        return this.http.post(this.url + `/establishment/signup`, form, options);
+    }
+    registerConductor(form) {
+        form = JSON.stringify(form);
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8',
+        });
+        let options = { body: form, headers };
+        console.log(options);
+        return this.http.post(this.url + `/driver/signup`, form, options);
+    }
+    loginConductor(form) {
+        form = JSON.stringify(form);
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8',
+        });
+        let options = { body: form, headers };
+        console.log(options);
+        return this.http.post(this.url + `/driver/signup`, form, options);
+    }
+    loginUser(form) {
+        form = JSON.stringify(form);
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8',
+        });
+        let options = { body: form, headers };
+        console.log(options);
+        return this.http.post(this.url + `/user/signin`, form, options);
+    }
+    loginChofer(form) {
+        form = JSON.stringify(form);
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8',
+        });
+        let options = { body: form, headers };
+        console.log(options);
+        return this.http.post(this.url + `/driver/signin`, form, options);
+    }
+    loginRest(form) {
+        form = JSON.stringify(form);
+        let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders({
+            'Content-Type': 'application/json; charset=utf-8',
+        });
+        let options = { body: form, headers };
+        console.log(options);
+        return this.http.post(this.url + `/establishment/signin`, form, options);
+    }
+};
+MultilevelService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient }
+];
+MultilevelService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
+        providedIn: 'root',
+    })
+], MultilevelService);
 
 
 
@@ -478,7 +647,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\r\n  <ion-router-outlet id=\"main\"></ion-router-outlet>\r\n</ion-app>\r\n\r\n<ion-menu side=\"end\" content-id=\"main\" autoHide=\"true\">\r\n  <ion-content>\r\n    <ion-list>\r\n        <ion-menu-toggle>\r\n          <ion-title color=\"dark\">TUS OPCIONES</ion-title>\r\n          <ion-item routerLink=\"/yo/usuario\">\r\n        <ion-icon  name=\"person\"  class=\"icon\"></ion-icon>Editar Perfil\r\n        </ion-item>\r\n        <ion-item routerLink=\"/home\">\r\n          <ion-icon name=\"cart\"  class=\"icon\"></ion-icon>Mi Pedido Actual\r\n        </ion-item>\r\n        <ion-item routerLink=\"/home\">\r\n          <ion-icon name=\"heart\"  class=\"icon\"></ion-icon>Mis Restaurantes Favoritos\r\n        </ion-item>\r\n        <ion-item routerLink=\"/home\">\r\n          <ion-icon name=\"pricetags\"  class=\"icon\"></ion-icon>Mis Compras/Facturas\r\n        </ion-item>\r\n  <ion-item routerLink=\"/login/usuario\">\r\n    <ion-icon name=\"moon\" class=\"icon\"></ion-icon> Cerrar Sesión \r\n</ion-item>\r\n        </ion-menu-toggle>\r\n      </ion-list>\r\n  </ion-content>\r\n</ion-menu>\r\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-app>\r\n  <ion-router-outlet id=\"main\"></ion-router-outlet>\r\n</ion-app>\r\n\r\n<ion-menu side=\"end\" content-id=\"main\" autoHide=\"true\">\r\n  <ion-content>\r\n    <ion-list *ngIf=\"multilevelservice.users.type==1\">\r\n        <ion-menu-toggle>\r\n          <ion-title color=\"dark\">TUS OPCIONES</ion-title>\r\n          <ion-item routerLink=\"/yo/usuario\">\r\n        <ion-icon  name=\"person\"  class=\"icon\"></ion-icon>Editar Perfil\r\n        </ion-item>\r\n        <ion-item routerLink=\"/miscompras-usuario\">\r\n          <ion-icon name=\"cart\"  class=\"icon\"></ion-icon>Mi Pedido Actual\r\n        </ion-item>\r\n        <ion-item routerLink=\"/misfavoritos-usuario\">\r\n          <ion-icon name=\"heart\"  class=\"icon\"></ion-icon>Mis Restaurantes Favoritos\r\n        </ion-item>\r\n        <ion-item routerLink=\"/home\">\r\n          <ion-icon name=\"pricetags\"  class=\"icon\"></ion-icon>Mis Compras/Facturas\r\n        </ion-item>\r\n  <ion-item routerLink=\"/login/usuario\">\r\n    <ion-icon name=\"moon\" class=\"icon\"></ion-icon> Cerrar Sesión \r\n</ion-item>\r\n </ion-menu-toggle>\r\n</ion-list>\r\n\r\n      <ion-list *ngIf=\"multilevelservice.users.type==2\">\r\n        <ion-menu-toggle>\r\n          <ion-title color=\"dark\">TUS OPCIONES</ion-title>\r\n          <ion-item routerLink=\"/yo/restaurante\">\r\n        <ion-icon  name=\"person\"  class=\"icon\"></ion-icon>Editar Perfil\r\n        </ion-item>\r\n        <ion-item routerLink=\"/sesion-restaurante\">\r\n          <ion-icon name=\"pricetags\"  class=\"icon\"></ion-icon>Mis Pedidos/Mis Ventas\r\n        </ion-item>\r\n  <ion-item routerLink=\"/login/restaurante\">\r\n    <ion-icon name=\"moon\" class=\"icon\"></ion-icon> Cerrar Sesión \r\n</ion-item>\r\n        </ion-menu-toggle>\r\n      </ion-list>\r\n\r\n      <ion-list *ngIf=\"multilevelservice.users.type==3\">\r\n        <ion-menu-toggle>\r\n          <ion-title color=\"dark\">TUS OPCIONES</ion-title>\r\n          <ion-item routerLink=\"/yo/chofer\">\r\n        <ion-icon  name=\"person\"  class=\"icon\"></ion-icon>Editar Perfil\r\n        </ion-item>\r\n        <ion-item routerLink=\"/sesion-chofer\">\r\n          <ion-icon name=\"pricetags\"  class=\"icon\"></ion-icon>Pedidos Listos\r\n        </ion-item>\r\n  <ion-item routerLink=\"/login/chofer\">\r\n    <ion-icon name=\"moon\" class=\"icon\"></ion-icon> Cerrar Sesión \r\n</ion-item>\r\n        </ion-menu-toggle>\r\n      </ion-list>\r\n  </ion-content>\r\n</ion-menu>\r\n");
 
 /***/ })
 

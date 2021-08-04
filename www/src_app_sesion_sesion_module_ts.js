@@ -25,6 +25,10 @@ const routes = [
     {
         path: 'restaurante',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_sesion_sesion-restaurante_sesion-restaurante_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./sesion-restaurante/sesion-restaurante.module */ 5003)).then(m => m.SesionRestaurantePageModule)
+    },
+    {
+        path: 'chofer',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_sesion_sesion-chofer_sesion-chofer_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./sesion-chofer/sesion-chofer.module */ 9359)).then(m => m.SesionChoferPageModule)
     }
 ];
 let SesionPageRoutingModule = class SesionPageRoutingModule {

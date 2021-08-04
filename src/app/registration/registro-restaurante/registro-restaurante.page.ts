@@ -46,7 +46,7 @@ export class RegistroRestaurantePage implements OnInit {
   }
 
   get email() {
-    return this.credentials.get('Email');
+    return this.credentials.get('email');
   }
 
   get password() {

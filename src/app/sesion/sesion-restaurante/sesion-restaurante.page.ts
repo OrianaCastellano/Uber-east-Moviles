@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MultilevelService } from 'src/app/multilevel.service';
 
 @Component({
   selector: 'app-sesion-restaurante',
@@ -6,36 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sesion-restaurante.page.scss'],
 })
 export class SesionRestaurantePage implements OnInit {
- lista: string[];
+  lista: string[];
+  productos_total: any = [];
+  productos: any = [];
+  buscador: string;
+  slideOpts = { initialSlide: 1, speed: 400, autoplay: true };
 
-  producto: any=[{
-    titulo: "Hamburguesa",
-    restaurante: "Siesta key",
-    precio: "3$" ,
-    ubicacion: "Av.13A entre calles 72 y 73",
-  },{
-    titulo: "Pizza Personal",
-    restaurante: "Caste Pizza",
-    precio: "1$" ,
-    ubicacion: "Av.Padilla-Torres del Saladillo",},
-    {
-      titulo: "Torta de Chocolate",
-      restaurante: "Gelart",
-      precio: "5$" ,
-      ubicacion: "Urb.Coromoto. Calle 171 con av.43",},
-      {
-        titulo: "Torta de Chocolate",
-        restaurante: "Gelart",
-        precio: "5$" ,
-        ubicacion: "Urb.Coromoto. Calle 171 con av.43",}, 
-        {
-          titulo: "Torta de Chocolate",
-          restaurante: "Gelart",
-          precio: "5$" ,}
-];
-  constructor() { }
+  constructor(
+    private router: Router,
+    private multilevelservice: MultilevelService
+  ) {}
 
   ngOnInit() {
-  }
+    if (!localStorage.getItem('id')) {
+      this.router.navigateByUrl('/sesion/restaurante');
+    }
+    let productos = JSON.parse(localStorage.getItem('Productos'));
 
+    for (let i = 0; i < productos.length; i++) {
+      this.productos.push(productos[i]);
+    }
+    this.productos_total = this.productos;
+  }
 }
